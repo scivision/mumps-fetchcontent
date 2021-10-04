@@ -4,6 +4,8 @@ project(MUMPS_example
 LANGUAGES C Fortran
 )
 
+enable_testing()
+
 include(FetchContent)
 
 set(CMAKE_TLS_VERIFY true)
@@ -29,6 +31,12 @@ FetchContent_MakeAvailable(MUMPSupstream)
 
 add_executable(c_mumps src/d_simple.c)
 target_link_libraries(c_mumps PRIVATE MUMPS::MUMPS MPI::MPI_C)
+add_test(NAME MUMPS_C
+COMMAND ${MPIEXEC_EXECUTABLE} ${MPIEXEC_NUMPROC_FLAG} 2 $<TARGET_FILE:c_mumps>
+)
 
 add_executable(fortran_mumps src/d_simple.f90)
 target_link_libraries(fortran_mumps PRIVATE MUMPS::MUMPS MPI::MPI_Fortran)
+add_test(NAME MUMPS_Fortran
+COMMAND ${MPIEXEC_EXECUTABLE} ${MPIEXEC_NUMPROC_FLAG} 2 $<TARGET_FILE:fortran_mumps>
+)
