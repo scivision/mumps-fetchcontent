@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.20...3.21)
 
-project(MUMPS_example LANGUAGES C Fortran)
+project(MUMPS_example
+LANGUAGES C Fortran
+)
 
 include(FetchContent)
 

@@ -4,9 +4,10 @@ program d_simple
 
 use, intrinsic :: iso_fortran_env, only: stderr=>error_unit, stdout=>output_unit, int64
 
+use mpi
+
 implicit none
 
-include 'mpif.h'
 INCLUDE 'dmumps_struc.h'
 TYPE (DMUMPS_STRUC) mumps_par
 INTEGER :: IERR, I, num_mpi
