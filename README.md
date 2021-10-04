@@ -5,6 +5,8 @@ Example of using MUMPS via CMake
 
 This example will download and build MUMPS, and find or build Scalapack, BLACS, and LAPACK.
 
+It requires that MPI library for Fortran and C is already installed.
+
 ```sh
 cmake -B build
 
