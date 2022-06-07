@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.20...3.21)
+cmake_minimum_required(VERSION 3.20)
 
 project(MUMPS_example
 LANGUAGES C Fortran
@@ -22,7 +22,7 @@ find_package(MPI COMPONENTS C Fortran REQUIRED)
 
 FetchContent_Declare(MUMPSupstream
   GIT_REPOSITORY https://github.com/scivision/mumps.git
-  GIT_TAG v5.4.1.2
+  GIT_TAG v5.5.0.0
 )
 
 FetchContent_MakeAvailable(MUMPSupstream)
